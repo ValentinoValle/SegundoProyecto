@@ -1,3 +1,35 @@
+/* Main variables */
+
+$primary-bright-ed: hsl(12, 88%, 59%); 
+$primary-dark-blue: hsl(228, 39%, 23%);
+
+$neutral-d-grayish-blue: hsl(227, 12%, 61%);
+$neutral-v-dark-blue: hsl(233, 12%, 13%);
+$neutral-v-pale-red: hsl(13, 100%, 96%);
+$neutral-v-light-grey: hsl(0, 0%, 98%);
+
+$ff-primary: 'Be Vietnam Pro', sans-serif; 
+
+$ff-body: $ff-primary;
+$ff-heading: $ff-primary;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$fs-body: 0.875rem;
+$fs-primary-heading: 2.5rem;
+$fs-secondary-heading: 1.875rem;
+$fs-nav: 0.9375rem;
+$fs-button: 0.8125rem;
+
+@media (min-width: 50em) {
+    $fs-body: 0.9375rem;
+    $fs-primary-heading: 3.5rem;
+    $fs-secondary-heading: 2.5rem;
+    $fs-nav: 0.8125rem;
+}
+
 /* Resets */
 
 /* Box sizing rules */
@@ -26,9 +58,14 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+/* Set body and doc height */
+html,
+body {
+    height: 100%;
+}
+
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -40,17 +77,10 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+svg {
   max-width: 100%;
   display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
