@@ -1,131 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Product preview card component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="primary-header">
-        <div class="container">
-            <a href="#"><img src="images/logo.svg" alt="manage"></a>
-            <nav class="primary-nav" aria-label="Primary">
-                <ul aria-label="Primary" role="list" class="nav-list">
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Community</a></li>
-                </ul>
-            </nav>
-            <button class="button">Get Started</button>
-        </div>
-    </header>
-
-    <main>
-        <section>
-            <div class="container">
-                <div class="even-columns">
-                    <div>
-                        <h1 class="fs-primary-heading fw-bold">Bring everyone together to build better products.</h1>
-                        <p>Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view</p>
-                        <button class="button">Get Started</button>
-                    </div>
-                    <div>
-                        <img src="images/illustration-intro.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <div class="containe">
-                <div class="even-columns">
-                    <div>
-                        <h2 class="fs-secondary-heading fw-bold">what's different about Manage?</h2>
-                        <p>Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made for modern digital product teams.</p>
-                    </div>
-                    <div>
-                        <ul class="numbered-items" role="list">
-                            <li>
-                                <h3 class="fs-600 fw-bold">Track company-wide progress</h3>
-                                <p>See how your day-to-day tasks fit into the wider vision. Go from tranking progress at the milestone level all the way done to the smallest of details. Never lose sight of the bigger picture again</p>
-                            </li>
-                            <li>
-                                <h3 class="fs-600 fw-bold">Advanced built-in reports</h3>
-                                <p>Set internal delivery estimates and track progress toward company goals. Our customisable dashboard helps you build out the reports you need to keep key stakeholders informed.</p>
-                            </li>
-                            <li>
-                                <h3 class="fs-600 fw-bold">Everything you need in one place</h3>
-                                <p>Stop jumping from one service to another to communicate, store files, track tasts and share documents. Manage offers an all-in-one team productivity solution.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="carousel">
-            <h2 class="fs-secondary-heading">What they've said</h2>
-            <button>Get Started</button>
-        </section>
-
-        <section class="cta | bg-primary-400 text-neutral-100">
-            <div class="container">
-                <div class="even-columns">
-                    <div>
-                        <p class="fs-secondary-heading fw-bold">Simplify how your team works today.</p>
-                    </div>
-                    <div>
-                        <button data-type="inverted" class="button">Get Started</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-neutral-900 text-neutral-100">
-        <div class="container">
-            <div class="even-columns">
-                <div>
-                    <a href="#"><img src="images/logo.svg" alt="manage"></a>
-                    <ul role="list" aria-label="Social links">
-                        <li><a aria-label="facebook" href="#"></a></li>
-                        <li><a aria-label="youtube" href="#"></a></li>
-                        <li><a aria-label="twitter" href="#"></a></li>
-                        <li><a aria-label="pinterest" href="#"></a></li>
-                        <li><a aria-label="instagram" href="#"></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <nav class="footer-nav">
-                        <ul aria-label="Footer" role="list">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Community</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div>
-                    <form action="">
-                        <input type="email">
-                        <button class="button"></button>
-                        <p>Copyright 2020. All Rights Reserved.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="js/main.js"></script>    
+<body class="bg-primary-cream">
+  <div class="section-container">
+    <section class="container bg-neutral-white">
+      <div>
+        <picture>
+          <source media="(min-width: 375px)" srcset="images/image-product-desktop.jpg">
+          <img src="images/image-product-mobile.jpg" alt="perfume-image">
+        </picture>
+      </div>
+      <div class="product-description">
+        <p class="margin-top-small clr-neutral-dark-greyish-blue fs-extra-small ff-primary product-type">perfume</p>
+        <h2 class="margin-top-small fs-big ff-secondary fw-bold clr-neutral-very-dark-blue">Gabrielle Essence Eau De Parfum</h2>
+        <p class="product-info clr-neutral-dark-greyish-blue fs-small margin-top-medium ff-primary fw-medium">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+        <p class="price clr-primary-dark-cyan fs-big margin-top ff-secondary">$149.99</p>
+        <button class="ff-primary fs-small fw-bold clr-neutral-white bg-primary-dark-cyan margin-top btn">
+          <img src="images/icon-cart.svg" alt="cart-icon">
+          <p>Add to Cart</p>
+        </button>
+      </div>
+    </section>
+  </div>
 </body>
 </html>

@@ -1,48 +1,32 @@
-/* Main variables */
+/* Variables */ 
+
 :root {
-  --primary-bright-red: hsl(12, 88%, 59%); 
-  --primary-dark-blue: hsl(228, 39%, 23%);
+    --primary-dark-cyan: hsl(158, 36%, 37%);
+    --primary-cream: hsl(30, 38%, 92%);
 
-  --neutral-d-grayish-blue: hsl(227, 12%, 61%);
-  --neutral-v-dark-blue: hsl(232, 12%, 13%);
-  --neutral-v-pale-red: hsl(13, 100%, 96%);
-  --neutral-v-light-grey: hsl(0, 0%, 98%);
+    --neutral-very-dark-blue: hsl(212, 21%, 14%);
+    --neutral-dark-greyish-blue: hsl(228, 12%, 48%);
+    --neutral-white: hsl(0, 0%, 100%);
 
-  --ff-primary: 'Be Vietnam Pro', sans-serif; 
+    --fs-extra-small: 0.8rem;
+    --fs-small: 0.875rem;
+    --fs-big: 2rem;
 
-  --ff-body: --ff-primary;
-  --ff-heading: --ff-primary;
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Fraunces', serif;
 
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 700;
-
-  --fs-body: 0.875rem;
-  --fs-primary-heading: 2.5rem;
-  --fs-secondary-heading: 1.875rem;
-  --fs-nav: 0.9375rem;
-  --fs-button: 0.8125rem;
-}
-
-@media (min-width: 50em) {
-  :root {
-    $fs-body: 0.9375rem;
-    $fs-primary-heading: 3.5rem;
-    $fs-secondary-heading: 2.5rem;
-    $fs-nav: 0.8125rem;
-  }
+    --fw-medium: 500;
+    --fw-bold: 700;
 }
 
 /* Resets */
+/* Box sizing */
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-/* Remove default margin */
+/* Margin and padding reset */
 
 * {
     margin: 0;
@@ -50,104 +34,146 @@
     font: inherit;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
+/* Body and Html height */
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set body and doc height */
-html,
-body {
+html, body {
     height: 100%;
 }
 
-/* Set core body defaults */
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* General Styling */
+
 body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+.section-container {
+    max-width: 650px;
+    max-height: 445px;
 }
 
-/* Make images easier to work with */
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+    border-radius: .5em;
+
+    & > div > picture > img {
+        border-radius: .5em .5em 0 0;
+    }
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.product-description {
+    padding: 1rem;
 }
 
-/* Utility classes */
-
-.text-primary-400 {
-  color: var(--primary-dark-blue);
-}
-.text-accent-400 {
-  color: var(--primary-bright-red);
-}
-.text-accent-100 {
-  color: var(--neutral-v-pale-red);
-}
-.text-neutral-100 {
-  color: var(--neutral-v-dark-blue);
-}
-.text-neutral-900 {
-  color: var(--neutral-v-light-grey);
+.product-type {
+    text-transform: uppercase;
+    letter-spacing: .5em;
 }
 
-.bg-primary-400 {
-  background-color: var(--primary-dark-blue);
-}
-.bg-accent-400 {
-  background-color: var(--primary-bright-red);
-}
-.bg-accent-100 {
-  background-color: var(--neutral-v-pale-red);
-}
-.bg-neutral-100 {
-  background-color: var(--neutral-v-dark-blue);
-}
-.bg-neutral-900 {
-  background-color: var(--neutral-v-light-grey);
+.product-info {
+    line-height: 1.75;
 }
 
+
+
+.price {
+    position: relative;
+
+    &::after {
+        content: '$169.99';
+        position: absolute;
+        left: 10.5em;
+        top: .75em;
+        font-family: var(--ff-primary);
+        font-size: var(--fs-small);
+        font-weight: var(--fw-medium);
+        text-decoration: line-through;
+        color: var(--neutral-dark-greyish-blue);
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    
+    & > * {
+        margin-inline: .35em;
+    }
+}
+
+@media (min-width: 375px) {
+    .container {
+        flex-direction: row;
+
+        & > div {
+            width: 50%;
+        }
+    }
+
+    .product-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+/* Custom classes */
+/* Font families */
+
+.ff-primary { font-family: var(--ff-primary); }
+
+.ff-secondary { font-family: var(--ff-secondary); }
+
+/* Font wheights */
+
+.fw-medium { font-weight: var(--fw-medium); }
 
 .fw-bold { font-weight: var(--fw-bold); }
-.fw-medium { font-weight: var(--fw-medium); }
-.fw-regular { font-weight: var(--fw-regular); }
 
-.fs-primary-heading {
-  font-size: var(--fs-primary-heading);
-}
-.fs-secondary-heading {
-  font-size: var(--fs-secondary-heading);
-}
-.fs-300 { font-size: var(--fs-button); }
-.fs-400 { font-size: var(--fs-body); }
-.fs-500 { font-size: var(--fs-nav); }
-.fs-600 { font-size: 1rem; }
+/* Font sizes */
+
+.fs-small { font-size: var(--fs-small); }
+
+.fs-big { font-size: var(--fs-big); }
+
+.fs-extra-small { font-size: var(--fs-extra-small); }
+
+/* Background colors */
+
+.bg-primary-cream { background-color: var(--primary-cream); }
+
+.bg-neutral-white { background-color: var(--neutral-white); }
+
+.bg-primary-dark-cyan { background-color: var(--primary-dark-cyan); }
+
+/* Font colors */
+
+.clr-neutral-very-dark-blue { color: var(--neutral-very-dark-blue); }
+
+.clr-primary-dark-cyan { color: var(--primary-dark-cyan); }
+
+.clr-neutral-dark-greyish-blue { color: var(--neutral-dark-greyish-blue); }
+
+.clr-neutral-white { color: var(--neutral-white); }
+
+/* Spacing classes */
+
+.margin-top { margin-top: 1rem; }
+
+.margin-top-small { margin-top: .5rem; }
+
+.margin-top-medium { margin-top: .75rem; }
